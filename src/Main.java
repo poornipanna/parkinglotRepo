@@ -5,20 +5,28 @@ public class Main {
     public static void main(String[] args)
     {
 
-        Car car1 = new Car();
+
         ParkingLot parkingLot = new ParkingLot(4);
-        car1.add(parkingLot);
 
-        Car car2 = new Car();
-        car2.add(parkingLot);
+        Vehical vehical1 = new Car();
+        vehical1.park(parkingLot);
 
-        Car car3 = new Car();
-        car3.add(parkingLot);
+        Vehical vehical2 = new Car();
+        vehical2.park(parkingLot);
 
-        Car car4 = new Car();
-        car4.add(parkingLot);
+        Vehical vehical3 = new Car();
+        vehical3.park(parkingLot);
 
-        car2.remove(parkingLot);
+        Vehical vehical4 = new Suv();
+        vehical4.park(parkingLot);
+
+        Vehical vehical5 = new Suv();
+        vehical5.park(parkingLot);
+
+
+     //   vehical3.unpark(parkingLot);
+      //  vehical4.unpark(parkingLot);
+       // vehical1.unpark(parkingLot);
 
 
         boolean status = parkingLot.isFull();
