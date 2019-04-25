@@ -13,7 +13,7 @@ public class ParkingLot {
 
     boolean isFull()
     {
-        if(avaliableSlots== 0)
+        if(capacity == 0)
         {
             return false;
         }
@@ -25,27 +25,28 @@ public class ParkingLot {
 
     void addVehical()
     {
-        System.out.println("avaliable slots"+capacity +avaliableSlots);
-        if(checkAvaliablity() < capacity) {
-            avaliableSlots++;
+
+        if( checkAvaliablity() == 0) {
+            System.out.println("Vehicle cannot be parked parking full");
         }
         else
             {
-            System.out.println("Vehicle cannot be parked parking full");
+            capacity--;
+            System.out.println("avaliable slots::: "+capacity );
         }
     }
 
     void removeVehical()
     {
 
-        avaliableSlots--;
+        capacity++;
 
     }
 
     int checkAvaliablity()
     {
 
-        return avaliableSlots;
+        return capacity;
 
     }
 

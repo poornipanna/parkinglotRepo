@@ -24,9 +24,17 @@ public class Main {
         vehical5.park(parkingLot);
 
 
-     //   vehical3.unpark(parkingLot);
-      //  vehical4.unpark(parkingLot);
-       // vehical1.unpark(parkingLot);
+       vehical3.unpark(parkingLot);
+       vehical4.unpark(parkingLot);
+       vehical1.unpark(parkingLot);
+
+       Vehical vehical6 = new Jeep();
+       vehical6.park(parkingLot);
+
+       Vehical vehical7 = new Truck();
+       vehical7.park(parkingLot);
+
+       vehical5.unpark(parkingLot);
 
 
         boolean status = parkingLot.isFull();
