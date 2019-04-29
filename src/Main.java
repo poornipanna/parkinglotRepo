@@ -1,52 +1,42 @@
-
+/* PARKING LOT PROJECT */
 
 public class Main {
 
     public static void main(String[] args)
     {
 
-
         ParkingLot parkingLot = new ParkingLot(4);
 
         Vehical vehical1 = new Car();
+        Vehical vehical2 = new Suv();
+        Vehical vehical3 = new Jeep();
+        Vehical vehical4 = new Truck();
+
         vehical1.park(parkingLot);
-
-        Vehical vehical2 = new Car();
         vehical2.park(parkingLot);
-
-        Vehical vehical3 = new Car();
         vehical3.park(parkingLot);
-
-        Vehical vehical4 = new Suv();
         vehical4.park(parkingLot);
 
-        Vehical vehical5 = new Suv();
-        vehical5.park(parkingLot);
+        vehical1.unpark(parkingLot);
+        vehical2.unpark(parkingLot);
+        vehical3.unpark(parkingLot);
+        vehical4.unpark(parkingLot);
 
-
-       vehical3.unpark(parkingLot);
-       vehical4.unpark(parkingLot);
-       vehical1.unpark(parkingLot);
-
-       Vehical vehical6 = new Jeep();
-       vehical6.park(parkingLot);
-
-       Vehical vehical7 = new Truck();
-       vehical7.park(parkingLot);
-
-       vehical5.unpark(parkingLot);
-
+        vehical1.park(parkingLot);
+        vehical2.park(parkingLot);
 
         boolean status = parkingLot.isFull();
 
-        int avaliablity = parkingLot.checkAvaliablity();
+        int avaliablity = parkingLot.checkNoOfSlotsAvaliable();
+        int noOfVehicalsParked = parkingLot.checkNoOfVehicalsParked();
 
-        System.out.println("no of slots avaliable ="+avaliablity);
+        System.out.println("no of slots avaliable = " +avaliablity);
+        System.out.println("no of Vehicals parked in parking lot = " +noOfVehicalsParked);
 
-       if(status == true)
-            System.out.println(" Parking avaliable");
-       else
-           System.out.println("Parking is full");
+        if(status == true)
+            System.out.println("Parking avaliable");
+        else
+            System.out.println("Parking is full");
 
     }
 

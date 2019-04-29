@@ -2,51 +2,63 @@
 
 public class ParkingLot {
 
-    private int capacity=0;
+    private int parkingCapacity;
     private int avaliableSlots=0;
+    private int noOfVehicalsParked=0;
 
     ParkingLot(int numberofSlots)
     {
-        capacity  = numberofSlots;
-        System.out.println("avaliable slots"+capacity);
+        parkingCapacity  = numberofSlots;
+        avaliableSlots = parkingCapacity;
+        noOfVehicalsParked =0 ;
     }
 
     boolean isFull()
     {
-        if(capacity == 0)
-        {
+        if (avaliableSlots == 0)
             return false;
-        }
-        else
-
+         else
             return true;
-
     }
 
     void addVehical()
     {
 
-        if( checkAvaliablity() == 0) {
-            System.out.println("Vehicle cannot be parked parking full");
-        }
-        else
+            if( !isFull()) {
+                System.out.println("Vehicle cannot be parked already parking full");
+            }
+            else
             {
-            capacity--;
-            System.out.println("avaliable slots::: "+capacity );
-        }
+                noOfVehicalsParked++;
+                avaliableSlots = parkingCapacity - noOfVehicalsParked;
+            }
     }
 
     void removeVehical()
     {
 
-        capacity++;
+            if( noOfVehicalsParked == 0) {
+                System.out.println(" No Vehicals are parked yet");
+            }
+            else
+            {
+               noOfVehicalsParked--;
+               avaliableSlots =  parkingCapacity - noOfVehicalsParked;
+            }
 
     }
 
-    int checkAvaliablity()
+    int checkNoOfSlotsAvaliable()
     {
 
-        return capacity;
+        return avaliableSlots;
+
+    }
+
+    int checkNoOfVehicalsParked()
+    {
+
+        return noOfVehicalsParked;
 
     }
 
